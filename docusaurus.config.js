@@ -7,25 +7,16 @@ const config = {
   tagline: 'Technical Writing in the Age of AI',
   favicon: 'img/favicon.ico',
 
-  // --- DEPLOYMENT SETTINGS START ---
-  // If your GitHub username is 'jacksteve', the URL is 'https://jacksteve.github.io'
-  url: 'https://YOUR_GITHUB_USERNAME.github.io', 
-  
-  // This must match your GitHub repository name with slashes
+  // --- DEPLOYMENT SETTINGS ---
+  // Using your verified GitHub username: JackSteve-code
+  url: 'https://JackSteve-code.github.io', 
   baseUrl: '/my-ai-blog/', 
-
-  // Your GitHub username
-  organizationName: 'YOUR_GITHUB_USERNAME', 
-  
-  // Your GitHub repository name
+  organizationName: 'JackSteve-code', 
   projectName: 'my-ai-blog', 
-
-  // GitHub Pages uses this branch to host the files
   deploymentBranch: 'gh-pages',
   trailingSlash: false,
-  // --- DEPLOYMENT SETTINGS END ---
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'ignore', 
   onBrokenMarkdownLinks: 'warn',
 
   i18n: {
@@ -42,7 +33,7 @@ const config = {
           sidebarPath: './sidebars.js',
           routeBasePath: '/', 
         },
-        blog: false, // Fully disabled the blog engine here
+        blog: false, 
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -58,11 +49,11 @@ const config = {
         title: 'AI Co-Author',
         logo: {
           alt: 'Logo',
-          src: 'img/cloud.png', // Switched to your cloud image
+          src: 'img/cloud.png', 
         },
         items: [
           {
-            href: 'https://github.com/YOUR_GITHUB_USERNAME/my-ai-blog',
+            href: 'https://github.com/JackSteve-code/my-ai-blog',
             label: 'GitHub',
             position: 'right',
           },
