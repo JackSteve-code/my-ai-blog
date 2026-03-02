@@ -1,30 +1,88 @@
 /**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
+ * Purple-to-Green Cosmic Transition
+ * High-Clarity / Minimalist Edition
  */
 
-/* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  /* Colors */
+  --bg-top-purple: #1a0b2e;      /* Deep cosmic purple */
+  --bg-bottom-green: #011a10;    /* Your dominant dark green */
+  --neon-green: #00ff41;         /* Title color from your image */
+  --prose-white: #e2e8f0;        /* Clean off-white for body text */
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+/* 1. Remove Top Navigation & Breadcrumbs */
+.navbar, 
+.theme-doc-breadcrumbs,
+.footer {
+  display: none !important;
+}
+
+/* 2. The Scrolling Background Effect */
+html, body {
+  /* Creates a smooth transition from Purple at the top to Green at the bottom */
+  background: linear-gradient(
+    180deg, 
+    var(--bg-top-purple) 0%, 
+    #0d051a 30%, 
+    var(--bg-bottom-green) 70%, 
+    #000c07 100%
+  ) !important;
+  
+  /* This 'fixed' property is what makes the green feel like it's being revealed */
+  background-attachment: fixed !important;
+  background-size: cover;
+  color: var(--prose-white);
+  font-family: 'Georgia', serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* 3. Main Content Area */
+.main-wrapper {
+  padding-top: 2rem !important; /* Small gap since navbar is gone */
+  background: transparent !important;
+}
+
+.theme-doc-markdown {
+  padding: 4rem 2.5rem;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+/* 4. Headings (Italic Neon Green - Matches your Image) */
+.theme-doc-markdown h1, 
+.theme-doc-markdown h2, 
+.theme-doc-markdown h3 {
+  color: var(--neon-green) !important;
+  -webkit-text-fill-color: var(--neon-green) !important;
+  font-style: italic;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-top: 2rem;
+  text-shadow: 0 0 15px rgba(0, 255, 65, 0.1);
+}
+
+/* 5. Prose (Clean Italics) */
+.theme-doc-markdown p, 
+.theme-doc-markdown li {
+  font-style: italic;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--prose-white);
+  margin-bottom: 1.5rem;
+}
+
+/* 6. Code Blocks */
+code {
+  background: rgba(0, 255, 65, 0.1) !important;
+  color: var(--neon-green) !important;
+  border-radius: 4px;
+  padding: 0.2rem 0.4rem;
+}
+
+/* 7. Sidebar Cleanup */
+.theme-doc-sidebar-container {
+  background: transparent !important;
+  border-right: 1px solid rgba(0, 255, 65, 0.05) !important;
 }
